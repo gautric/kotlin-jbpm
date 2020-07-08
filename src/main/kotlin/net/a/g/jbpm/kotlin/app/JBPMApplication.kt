@@ -1,4 +1,4 @@
-package net.a.g.jbpm.service
+package net.a.g.jbpm.kotlin.app
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

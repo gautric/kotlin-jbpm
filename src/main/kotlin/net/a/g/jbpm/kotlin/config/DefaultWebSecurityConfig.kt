@@ -1,4 +1,4 @@
-package net.a.g.jbpm.service
+package net.a.g.jbpm.kotlin.config
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
