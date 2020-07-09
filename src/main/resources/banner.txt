@@ -11,4 +11,5 @@ ${Ansi.GREEN}
                                                                         ░░██████
                                                                          ░░░░░░
 ${Ansi.RED}                                                    kotlin-jbpm :: v.1.0-SNAPSHOT
+${Ansi.BLACK}
 
