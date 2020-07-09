@@ -42,11 +42,16 @@ class KotlinJBPMApplication {
           deploymentService!!.deploy(unit)
           LOGGER.info("{} successfully deployed", arg)
         }
-        LOGGER.info("Available processes:")
         val processes: Collection<ProcessDefinition> = runtimeDataService!!.getProcesses(QueryContext())
-        for (def in processes) {
-          LOGGER.info("\t{} (with id '{})", def.getName(), def.getId())
+        if(processes.isNotEmpty()){
+          LOGGER.info("Available processes:")
+          for (def in processes) {
+            LOGGER.info("\t{} (with id '{})", def.getName(), def.getId())
+          }
+        }else{
+          LOGGER.warn("Not Processes available")
         }
+
         if (unit != null && !processes.isEmpty()) {
           val processId: String = processes.iterator().next().getId()
           LOGGER.info("About to start process with id {}", processId)
@@ -55,7 +60,6 @@ class KotlinJBPMApplication {
           processService.abortProcessInstance(processInstanceId)
           LOGGER.info("Aborted instance with id {}", processInstanceId)
         }
-        LOGGER.info("========= Verification completed successfully =========")
       }
     }
   }
@@ -65,8 +69,6 @@ class KotlinJBPMApplication {
 
     @JvmStatic
     fun main(args: Array<String>) {
-      System.setProperty("hibernate.connection.provider_class","net.a.g.jbpm.kotlin.jpa.ForceSpringBootConnectionProvider");
-
       SpringApplication.run(KotlinJBPMApplication::class.java, *args)
     }
   }
