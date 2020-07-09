@@ -1,4 +1,4 @@
-package net.a.g.jbpm.kotlin.config
+package net.a.g.jbpm.kotlin.app
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
@@ -17,7 +17,7 @@ import java.util.*
 
 @EnableWebSecurity
 @Order(1)
-class DefaultWebSecurityConfig : WebSecurityConfigurerAdapter() {
+class DefaultWebSecurityConfig() : WebSecurityConfigurerAdapter() {
 
     override fun configure(http: HttpSecurity) {
         http.cors().and()
