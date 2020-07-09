@@ -84,10 +84,26 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.github.h-thurow</groupId>
+			<artifactId>simple-jndi</artifactId>
+			<version>0.23.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<sourceDirectory>src/main/kotlin</sourceDirectory>
+
+		<filters>
+			<filter>src/main/resources/application.properties</filter>
+		</filters>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
         <plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
