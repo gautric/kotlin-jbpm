@@ -17,7 +17,7 @@ import org.springframework.context.annotation.ComponentScan
 
 
 @SpringBootApplication
-@ComponentScan(basePackages = ["net.a.g.jbpm.kotlin.jpa", "net.a.g.jbpm.kotlin.rest"])
+@ComponentScan(basePackages = ["net.a.g.jbpm.kotlin.app", "net.a.g.jbpm.kotlin.jpa", "net.a.g.jbpm.kotlin.rest"])
 class KotlinJBPMApplication {
   @Bean
   fun deployAndValidate(): CommandLineRunner {
